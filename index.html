@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Base Camp Kunisaki, Kibe House｜岐部ハウス</title>
+    <meta name="description" content="国東半島・岐部の静かな宿。海と山の間にある一棟貸しの拠点から、ゆるっと深掘りする『国東物語』や地域ガイドも。" />
+    <link rel="canonical" href="https://kibehouse.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="岐部ハウス" />
+    <meta property="og:url" content="https://kibehouse.github.io/" />
+    <meta property="og:image" content="https://kibehouse.github.io/assets/ogp.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-slate-800">
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="./index.html" class="font-semibold text-lg">岐部ハウス</a>
+            <nav class="hidden md:flex gap-6 text-sm">
+                <a href="./index.html#about" class="hover:opacity-80">宿について</a>
+                <a href="https://note.com/kibehouse/n/n41a2289f6342" class="hover:opacity-80">国東物語</a>
+                <a href="./privacy.html" class="hover:opacity-80">プライバシー</a>
+                <a href="./en/index.html" class="hover:opacity-80">English</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-6">国東半島・岐部ハウス</h2>
+        <p class="text-slate-700 mb-4">海と山に囲まれた静かなゲストハウス
+        <div class="mt-6 flex gap-3">
+            <a href="https://airbnb.jp/h/kibehouse"
+                class="px-5 py-3 rounded-2xl bg-slate-900 text-white text-sm hover:opacity-90" target="_blank">ご予約はこちらから</a>
+            <a href="./en/index.html"
+                class="px-5 py-3 rounded-2xl border border-slate-300 text-sm hover:bg-slate-50">English</a>
+        </div>
+    </main>
+
+    <footer class="py-10 border-t border-slate-200 text-center text-sm text-slate-600">
+        <p>© <span id="y"></span>岐部ハウス/p>
+        <div class="mt-2 flex justify-center gap-4">
+            <a href="https://www.instagram.com/kibehouse_kunisaki/" target="_blank" class="underline">Instagram</a>
+            <a href="https://note.com/kibehouse/n/n41a2289f6342" target="_blank" class="underline">国東物語</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+</body>
