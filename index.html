@@ -4,49 +4,87 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Base Camp Kunisaki, Kibe House｜岐部ハウス</title>
-    <meta name="description" content="国東半島・岐部の静かな宿。海と山の間にある一棟貸しの拠点から、ゆるっと深掘りする『国東物語』や地域ガイドも。" />
-    <link rel="canonical" href="https://kibehouse.github.io/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="岐部ハウス" />
-    <meta property="og:url" content="https://kibehouse.github.io/" />
-    <meta property="og:image" content="https://kibehouse.github.io/assets/ogp.jpg" />
+
+    <title>Base Camp Kunisaki, Kibe House｜国東半島の一棟貸し宿</title>
+    <meta name="description" content="国東半島・岐部の静かな宿。海と山のあいだで過ごす一棟貸しの滞在と、地域の物語。">
+
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="岐部ハウス｜国東半島の一棟貸し宿">
+    <meta property="og:url" content="https://kibehouse.github.io/">
+    <meta property="og:image" content="https://kibehouse.github.io/assets/Header2.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-white text-slate-800">
-    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="./index.html" class="font-semibold text-lg">岐部ハウス</a>
-            <nav class="hidden md:flex gap-6 text-sm">
-                <a href="./index.html#about" class="hover:opacity-80">宿について</a>
-                <a href="https://note.com/kibehouse/n/n41a2289f6342" class="hover:opacity-80">国東物語</a>
-                <a href="./privacy.html" class="hover:opacity-80">プライバシー</a>
-                <a href="./en/index.html" class="hover:opacity-80">English</a>
-            </nav>
-        </div>
-    </header>
 
-    <main class="py-16 md:py-24 max-w-6xl mx-auto px-4">
-        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-6">国東半島・岐部ハウス</h2>
-        <p class="text-slate-700 mb-4">海と山に囲まれた静かなゲストハウス
+    <!-- Header -->
+    <Header class="border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-2 flex justify-between">
+            <div class="font-semibold">岐部ハウス</div>
+            <div class="text-sm space-x-4">
+                <a href="https://airbnb.jp/h/kibehouse" target="_blank">岐部ハウス</a>
+                <a href="#宿泊案内">宿泊案内</a>
+                <a href="#アクセス">アクセス</a>
+                <a href="#予約・料金">予約・料金</a>
+                <a href="https://www.instagram.com/kibehouse_kunisaki/" target="_blank">Instagram</a>
+                <a href="https://note.com/kibehouse/n/n41a2289f6342" target="_blank">国東物語</a>
+            </div>
+        </div>
+    </Header>
+ 
+    <!-- Main -->
+    <main class="pt-4 pb-8 md:pt-6 md:pb-16 max-w-6xl mx-auto px-4">
+        <!-- Hero Image -->
+        <div class="mb-8 rounded-2xl overflow-hidden aspect-[16/5] bg-slate-200">
+            <img src="assets/Header2.png" alt="岐部ハウスの風景" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-6">
+            国東半島・岐部ハウス
+        </h1>
+
+        <!-- Description -->
+        <p class="text-slate-700 mb-6">
+            海と山のあいだにある小さな集落、岐部。
+            その一角にある一棟貸しの宿です。
+        </p>
+
+        <p class="text-slate-700 mb-6">
+            観光地というより、暮らしの延長のような時間を過ごす場所。
+            そして、この土地に流れてきた物語に、少しだけ触れてみる拠点でもあります。
+        </p>
+
+        <!-- Buttons -->
         <div class="mt-6 flex gap-3">
-            <a href="https://airbnb.jp/h/kibehouse"
-                class="px-5 py-3 rounded-2xl bg-slate-900 text-white text-sm hover:opacity-90" target="_blank">ご予約はこちらから</a>
-            <a href="./en/index.html"
-                class="px-5 py-3 rounded-2xl border border-slate-300 text-sm hover:bg-slate-50">English</a>
+            <a href="https://airbnb.jp/h/kibehouse" class="px-5 py-3 rounded-2xl bg-slate-900 text-white text-sm"
+                target="_blank">
+                予約する
+            </a>
+
+            <a href="https://note.com/kibehouse/n/n41a2289f6342"
+                class="px-5 py-3 rounded-2xl border border-slate-300 text-sm" target="_blank">
+                国東物語を読む
+            </a>
         </div>
     </main>
 
+    <div id="宿泊案内">宿泊案内</div>
+    <div id="アクセス">アクセス</div>
+    <div id="予約・料金">予約・料金</div>
+    
+    <!-- Footer -->
     <footer class="py-10 border-t border-slate-200 text-center text-sm text-slate-600">
-        <p>© <span id="y"></span>岐部ハウス/p>
-        <div class="mt-2 flex justify-center gap-4">
-            <a href="https://www.instagram.com/kibehouse_kunisaki/" target="_blank" class="underline">Instagram</a>
-            <a href="https://note.com/kibehouse/n/n41a2289f6342" target="_blank" class="underline">国東物語</a>
-        </div>
+        <p>© <span id="y"></span> 岐部ハウス</p>
     </footer>
 
     <script>
         document.getElementById('y').textContent = new Date().getFullYear();
     </script>
+
 </body>
+
+</html>
