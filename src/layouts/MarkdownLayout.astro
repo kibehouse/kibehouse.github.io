@@ -1,0 +1,21 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+// Markdown ページから `layout:` 経由で使うレイアウト。
+// frontmatter を共通の骨格（BaseLayout）へ渡し、本文は .container 内に描画する。
+const { frontmatter } = Astro.props;
+const { title, description, hero, heroAlt, lang = 'jp' } = frontmatter;
+
+const suffix = lang === 'en' ? ' | Kibe House' : '｜岐部ハウス';
+const pageTitle = title ? `${title}${suffix}` : undefined;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={description}
+  hero={hero}
+  heroAlt={heroAlt}
+  lang={lang}
+>
+  <slot />
+</BaseLayout>

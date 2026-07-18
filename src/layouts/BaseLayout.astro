@@ -1,0 +1,146 @@
+---
+import '../styles/site.css';
+
+const {
+  title,
+  description,
+  image = '/images/header.png',
+  hero = '/images/header.png',
+  heroAlt = '岐部の入江から望む山あいの古民家',
+  lang = 'jp',
+} = Astro.props;
+
+const isEn = lang === 'en';
+const base = isEn ? '/en' : '/jp';
+const htmlLang = isEn ? 'en' : 'ja';
+// 読み物系のトップページ: 日本語=明朝 / 英語=セリフ
+const bodyClass = isEn ? 'en-serif' : 'ja-mincho';
+
+const defaultTitle = isEn
+  ? 'Kibe House｜A one-house stay on the Kunisaki Peninsula'
+  : '岐部ハウス｜国東半島の一棟貸し宿';
+const defaultDescription = isEn
+  ? 'A quiet homestay on an inlet of the Kunisaki Peninsula — a renovated old farmhouse for one group per night.'
+  : '国東半島・岐部の静かな宿。海と山のあいだで過ごす一棟貸しの滞在と、地域の物語。';
+const pageTitle = title ?? defaultTitle;
+const pageDescription = description ?? defaultDescription;
+
+// ナビは国東かいわいと同じ骨格（ホーム + セクション + 外部リンク）。言語別。
+const nav = isEn
+  ? [
+      { href: `${base}/`, label: 'Home' },
+      { href: `${base}/rooms/`, label: 'The House' },
+      { href: `${base}/access/`, label: 'Access' },
+      { href: `${base}/book/`, label: 'Booking & Rates' },
+      { href: 'https://www.instagram.com/kibehouse_kunisaki/', label: 'Instagram', external: true },
+      { href: 'https://kunisakikaiwai.jp/en/', label: 'Kunisaki Kaiwai', external: true },
+    ]
+  : [
+      { href: `${base}/`, label: 'ホーム' },
+      { href: `${base}/rooms/`, label: '宿泊施設' },
+      { href: `${base}/access/`, label: 'アクセス' },
+      { href: `${base}/book/`, label: '予約・料金' },
+      { href: 'https://www.instagram.com/kibehouse_kunisaki/', label: 'Instagram', external: true },
+      { href: 'https://kunisakikaiwai.jp/', label: '国東界隈', external: true },
+    ];
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+---
+
+<!doctype html>
+<!-- サイト固有のアクセント色（セージグリーン）を CSS 変数で上書き -->
+<html lang={htmlLang} style="--accent-ink:#5f7a54; --rule:#d8ddd2;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/images/logo/kibehouse_logo.png" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body class={bodyClass}>
+    <header class="site-top">
+      <div class="top-bar">
+        <div class="site-logo">
+          <a href={`${base}/`}>
+            <img
+              src="/images/logo/kibehouse_logo.png"
+              alt="岐部ハウス Kibe House"
+              class="logo-img"
+            />
+          </a>
+        </div>
+
+        <div class="top-right">
+          <div class="lang-switch">
+            <a href="/jp/">日本語</a> |
+            <a href="/en/">English</a>
+          </div>
+
+          <nav class="main-menu">
+            {nav.map((item) => (
+              <a href={item.href} {...(item.external ? { target: '_blank', rel: 'noopener' } : {})}>{item.label}</a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    {hero && (
+      <header class="site-header">
+        <a href={`${base}/`}><img src={hero} alt={heroAlt} /></a>
+      </header>
+    )}
+
+    <div class="container">
+      <slot />
+    </div>
+
+    <hr class="footer-divider" />
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-title">
+          <h3>岐部ハウス | Kibe House</h3>
+        </div>
+
+        <nav class="footer-links">
+          {nav.map((item) => (
+            <a href={item.href} {...(item.external ? { target: '_blank', rel: 'noopener' } : {})}>{item.label}</a>
+          ))}
+        </nav>
+
+        <p class="copyright">&copy; 2026 岐部ハウス</p>
+      </div>
+    </footer>
+
+    <style>
+      /* ロゴを本文コンテナ（860px列）の左端に揃える（top-bar の左パディング 2.5rem を相殺） */
+      .site-logo {
+        margin-left: -2.5rem;
+      }
+
+      /* 導入文（全角約44字）が一行に収まる幅（≒ 44 × 1.2rem ＋ 余白 ≒ 900px）以上に
+         なったら、ヘッダー写真を高さ固定の帯ではなく本来の縦横比で「上下フル」表示する。
+         それ未満の幅では共通スタイル（高さ250px・cover の帯）のまま。
+         ※このルールは岐部ハウス側のみ（国東かいわいは従来の帯表示を維持）。 */
+      @media (min-width: 900px) {
+        .site-header {
+          height: auto;
+        }
+        .site-header img {
+          height: auto;
+        }
+      }
+    </style>
+  </body>
+</html>
