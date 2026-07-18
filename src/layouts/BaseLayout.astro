@@ -8,13 +8,22 @@ const {
   hero = '/images/header.png',
   heroAlt = '岐部の入江から望む山あいの古民家',
   lang = 'jp',
+  font,
 } = Astro.props;
 
 const isEn = lang === 'en';
 const base = isEn ? '/en' : '/jp';
 const htmlLang = isEn ? 'en' : 'ja';
-// 読み物系のトップページ: 日本語=明朝 / 英語=セリフ
-const bodyClass = isEn ? 'en-serif' : 'ja-mincho';
+// 国東かいわいと同じフォント体系:
+// font="reading" => serif (en) / mincho (jp); otherwise => sans (en) / gothic (jp)
+const reading = font === 'reading' || font === 'mincho';
+const bodyClass = isEn
+  ? reading
+    ? 'en-serif'
+    : 'en-sans'
+  : reading
+    ? 'ja-mincho'
+    : 'ja-gothic';
 
 const defaultTitle = isEn
   ? 'Kibe House｜A one-house stay on the Kunisaki Peninsula'
@@ -31,7 +40,7 @@ const nav = isEn
       { href: `${base}/`, label: 'Home' },
       { href: `${base}/rooms/`, label: 'The House' },
       { href: `${base}/access/`, label: 'Access' },
-      { href: `${base}/book/`, label: 'Booking & Rates' },
+      { href: `https://airbnb.jp/h/kibehouse-en`, label: 'Booking & Rates' },
       { href: 'https://www.instagram.com/kibehouse_kunisaki/', label: 'Instagram', external: true },
       { href: 'https://kunisakikaiwai.jp/en/', label: 'Kunisaki Kaiwai', external: true },
     ]
@@ -39,7 +48,7 @@ const nav = isEn
       { href: `${base}/`, label: 'ホーム' },
       { href: `${base}/rooms/`, label: '宿泊施設' },
       { href: `${base}/access/`, label: 'アクセス' },
-      { href: `${base}/book/`, label: '予約・料金' },
+      { href: `https://airbnb.jp/h/kibehouse-en`, label: '予約・料金' },
       { href: 'https://www.instagram.com/kibehouse_kunisaki/', label: 'Instagram', external: true },
       { href: 'https://kunisakikaiwai.jp/', label: '国東界隈', external: true },
     ];
@@ -130,15 +139,15 @@ const ogImage = new URL(image, Astro.site).href;
       }
 
       /* 導入文（全角約44字）が一行に収まる幅（≒ 44 × 1.2rem ＋ 余白 ≒ 900px）以上に
-         なったら、ヘッダー写真を高さ固定の帯ではなく本来の縦横比で「上下フル」表示する。
+         なったら、ヘッダー写真を高さ固定の帯ではなく、より横長の比率で表示する。
+         自然比 1862×1028 に対して高さを約20%圧縮（1028 × 0.8 ≒ 822）し、
+         上下をわずかにクロップ（img は共通の object-fit:cover を利用）。
          それ未満の幅では共通スタイル（高さ250px・cover の帯）のまま。
          ※このルールは岐部ハウス側のみ（国東かいわいは従来の帯表示を維持）。 */
       @media (min-width: 900px) {
         .site-header {
           height: auto;
-        }
-        .site-header img {
-          height: auto;
+          aspect-ratio: 1862 / 822;
         }
       }
     </style>
