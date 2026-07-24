@@ -21,6 +21,12 @@ We do not provide meals, so please make use of local restaurants and catering se
 
 You are welcome to use the bath, and just a short drive away you can relax in a local hot spring with an open-air bath.
 
+### The house
+On the ground floor: a living room, dining area, and kitchen; two Japanese-style rooms and one wood-floored bedroom; plus a toilet, bath, and washroom — all for guests. The second-floor loft is the host's private space.
+Guests may use most of the ground floor. As this is a homestay, the second-floor loft and part of the ground floor are the owner's private areas, and the ground-floor kitchen and washroom are shared with the owner.
+
+[See more about the house](/en/facility/)
+
 ### Access
 - 40 min by car from Oita Airport
 - 50 min by car from JR Usa Station / JR Kitsuki Station
@@ -31,12 +37,6 @@ We are happy to share recommended spots around the Kunisaki Peninsula — its hi
 - Iwato-ji Temple: 15 min
 - Former Sento-ji Temple ruins: 20 min
 - Usa Jingu Shrine: 50 min
-
-### The house
-On the ground floor: a living room, dining area, and kitchen; two Japanese-style rooms and one wood-floored bedroom; plus a toilet, bath, and washroom — all for guests. The second-floor loft is the host's private space. The kitchen comes with basic cookware, tableware, and seasonings.
-
-### Guest areas
-Guests may use most of the ground floor. As this is a homestay, the second-floor loft and part of the ground floor are the owner's private areas, and the ground-floor kitchen and washroom are shared with the owner.
 
 ### Registration
 Hotel Business Act license | Oita Prefecture Eastern Health Center | Permit No. Toho-koku 500-6

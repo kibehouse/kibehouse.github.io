@@ -5,7 +5,8 @@ const {
   title,
   description,
   image = '/images/header.png',
-  hero = '/images/header.png',
+  // ヘッダー画像は frontmatter で hero を指定したページ（トップページ）のみ表示
+  hero = null,
   heroAlt = '岐部の入江から望む山あいの古民家',
   lang = 'jp',
   font,
@@ -38,7 +39,7 @@ const pageDescription = description ?? defaultDescription;
 const nav = isEn
   ? [
       { href: `${base}/`, label: 'Home' },
-      { href: `${base}/rooms/`, label: 'The House' },
+      { href: `${base}/facility/`, label: 'The House' },
       { href: `${base}/access/`, label: 'Access' },
       { href: `https://airbnb.jp/h/kibehouse-en`, label: 'Booking & Rates' },
       { href: 'https://www.instagram.com/kibehouse_kunisaki/', label: 'Instagram', external: true },
@@ -46,7 +47,7 @@ const nav = isEn
     ]
   : [
       { href: `${base}/`, label: 'ホーム' },
-      { href: `${base}/rooms/`, label: '宿泊施設' },
+      { href: `${base}/facility/`, label: '宿泊施設' },
       { href: `${base}/access/`, label: 'アクセス' },
       { href: `https://airbnb.jp/h/kibehouse-en`, label: '予約・料金' },
       { href: 'https://www.instagram.com/kibehouse_kunisaki/', label: 'Instagram', external: true },
