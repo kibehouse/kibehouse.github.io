@@ -31,6 +31,8 @@ Guests may use most of the ground floor. As this is a homestay, the second-floor
 - 40 min by car from Oita Airport
 - 50 min by car from JR Usa Station / JR Kitsuki Station
 
+[See access details](/en/access/)
+
 ### Around the area
 We are happy to share recommended spots around the Kunisaki Peninsula — its history and culture, hot springs, hiking trails, and local hidden gems.
 - Futago-ji Temple: 30 min
